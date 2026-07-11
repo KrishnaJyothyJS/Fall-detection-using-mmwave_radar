@@ -1,8 +1,15 @@
-# Ignore the dataset folder just in case
+# Ignore the local dataset folder
 dataset/
+
+# Ignore Python specific files and folders
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore the virtual environment folder
+venv/
+
+# Ignore data files specifically
 *.npy
 *.mat
 *.csv
-# Ignore Python cache
-__pycache__/
-venv/
