@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Privacy-Preserving Fall Detection Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+
+            <div>
+                <h2>FALL DETECTION</h2>
+                <span>AI MONITORING SYSTEM</span>
+            </div>
+        </div>
+
+        <div class="nav-heading">MAIN MENU</div>
+
+        <nav>
+
+            <a href="#alerts" class="nav-item active">
+                <i class="fa-solid fa-bell"></i>
+                <span>Emergency Alerts</span>
+                <span class="notification-count" id="sidebarAlertCount">2</span>
+            </a>
+
+            <a href="#residents" class="nav-item">
+                <i class="fa-solid fa-users"></i>
+                <span>Resident Monitoring</span>
+            </a>
+
+            <a href="#timeline" class="nav-item">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>Activity Timeline</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="system-status">
+                <div class="status-indicator"></div>
+
+                <div>
+                    <strong>System Online</strong>
+                    <p>Monitoring active</p>
+                </div>
+            </div>
+
+            <div class="project-label">
+                <p>PROJECT</p>
+                <span>Privacy-Preserving Fall Detection with mmWave Radar and Federated Deep Learning</span>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+                <p class="breadcrumb">Healthcare / Monitoring</p>
+                <h2>Monitoring Dashboard</h2>
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="live-status">
+                    <span class="live-dot"></span>
+                    LIVE MONITORING
+                </div>
+
+                <button class="icon-button" id="notificationButton">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="bell-dot"></span>
+                </button>
+
+                <div class="profile">
+                    <div class="avatar">C</div>
+                    <div>
+                        <strong>Caretaker</strong>
+                        <p>Administrator</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+
+        <div class="content">
+
+
+            <!-- WELCOME SECTION -->
+
+            <section class="welcome">
+
+                <div>
+                    <span class="welcome-tag">
+                        <i class="fa-solid fa-shield-heart"></i>
+                        SMART ELDERLY CARE
+                    </span>
+
+                    <h1>Resident Safety <span>Overview</span></h1>
+
+                    <p>
+                        Monitor residents, manage emergency alerts
+                        and track daily activities from one place.
+                    </p>
+                </div>
+
+                <div class="date-card">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span id="currentDate"></span>
+                </div>
+
+            </section>
+
+
+            <!-- SUMMARY CARDS -->
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Total Residents</span>
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <h2 id="totalResidents">04</h2>
+                    <p>Registered residents</p>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Active Alerts</span>
+                        <i class="fa-solid fa-triangle-exclamation red"></i>
+                    </div>
+
+                    <h2 id="activeAlerts">02</h2>
+                    <p>Requires attention</p>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Monitoring Status</span>
+                        <i class="fa-solid fa-satellite-dish green"></i>
+                    </div>
+
+                    <h2 class="online-text">ACTIVE</h2>
+                    <p>Dashboard demonstration mode</p>
+                </div>
+
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Today's Activities</span>
+                        <i class="fa-solid fa-chart-line blue"></i>
+                    </div>
+
+                    <h2 id="activityCount">06</h2>
+                    <p>Recorded events</p>
+                </div>
+
+            </section>
+
+
+
+            <!-- EMERGENCY ALERTS -->
+
+            <section class="section" id="alerts">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">SAFETY MANAGEMENT</span>
+                        <h2>Emergency Alerts & Notifications</h2>
+                        <p>Monitor and respond to critical events.</p>
+                    </div>
+
+                    <span class="live-badge">
+                        <span class="live-dot"></span>
+                        LIVE ALERTS
+                    </span>
+
+                </div>
+
+
+                <div class="alerts-container" id="alertsContainer">
+
+                    <!-- Alerts generated by JavaScript -->
+
+                </div>
+
+            </section>
+
+
+
+            <!-- RESIDENT MONITORING -->
+
+            <section class="section" id="residents">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">INDIVIDUAL MONITORING</span>
+                        <h2>Resident Monitoring</h2>
+                        <p>Individual resident profiles and safety information.</p>
+                    </div>
+
+                    <div class="resident-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="residentSearch"
+                            placeholder="Search residents..."
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="resident-grid" id="residentGrid">
+
+                    <!-- Resident cards generated by JavaScript -->
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ACTIVITY TIMELINE -->
+
+            <section class="section" id="timeline">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">ACTIVITY HISTORY</span>
+                        <h2>Activity Timeline</h2>
+                        <p>Chronological overview of detected activities.</p>
+                    </div>
+
+                    <select id="timelineFilter">
+                        <option value="all">All Activities</option>
+                        <option value="normal">Normal</option>
+                        <option value="warning">Warning</option>
+                        <option value="critical">Critical</option>
+                    </select>
+
+                </div>
+
+
+                <div class="timeline-card">
+
+                    <div class="timeline-header">
+                        <div>
+                            <h3>Recent Events</h3>
+                            <p>Resident activity records</p>
+                        </div>
+
+                        <span class="history-tag">DEMO HISTORY</span>
+                    </div>
+
+
+                    <div class="timeline-list" id="timelineList">
+
+                        <!-- Timeline generated by JavaScript -->
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+
+            <footer>
+                <p>
+                    Privacy-Preserving Fall Detection with mmWave Radar and Federated Deep Learning
+                </p>
+
+                <span>
+                    AI-Based Healthcare Monitoring System
+                </span>
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+
+<!-- RESIDENT PROFILE MODAL -->
+
+<div class="modal-overlay" id="residentModal">
+
+    <div class="modal">
+
+        <button class="close-modal" id="closeModal">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div id="residentDetails"></div>
+
+    </div>
+
+</div>
+
+
+<!-- NOTIFICATION TOAST -->
+
+<div class="toast" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMessage">Notification</span>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
